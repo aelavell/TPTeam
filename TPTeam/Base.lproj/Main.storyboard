@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="TPTeam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="LoginViewController" customModule="TPTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -29,25 +29,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egY-FO-WwP">
-                                <rect key="frame" x="126" y="319" width="123" height="30"/>
-                                <state key="normal" title="BLOGIN WITH FB">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Rhp-kK-vBJ" kind="show" id="XX3-t2-BYA"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUi-43-nFJ" customClass="FBLoginView">
+                                <rect key="frame" x="78" y="309" width="220" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="F9P-1k-Wcb"/>
+                                    <constraint firstAttribute="height" constant="50" id="wS6-vi-a6c"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="FwO-Qh-h4y" secondAttribute="centerX" id="LEw-kM-CbL"/>
                             <constraint firstAttribute="centerY" secondItem="dyZ-Zk-h50" secondAttribute="centerY" constant="-100" id="PFt-83-kY2"/>
                             <constraint firstAttribute="centerY" secondItem="dyZ-Zk-h50" secondAttribute="centerY" constant="100" id="XSJ-0p-QYZ"/>
+                            <constraint firstAttribute="centerY" secondItem="GUi-43-nFJ" secondAttribute="centerY" id="Y2X-BV-VqF"/>
                             <constraint firstAttribute="centerX" secondItem="dyZ-Zk-h50" secondAttribute="centerX" id="Zpp-Hh-7gc"/>
-                            <constraint firstAttribute="centerX" secondItem="egY-FO-WwP" secondAttribute="centerX" id="ccc-dU-DUf"/>
                             <constraint firstAttribute="centerY" secondItem="FwO-Qh-h4y" secondAttribute="centerY" constant="-100" id="eLz-UB-YoG"/>
-                            <constraint firstAttribute="centerY" secondItem="egY-FO-WwP" secondAttribute="centerY" id="h9d-f3-xlg"/>
+                            <constraint firstAttribute="centerY" secondItem="GUi-43-nFJ" secondAttribute="centerY" id="lge-Th-Cnj"/>
+                            <constraint firstAttribute="centerX" secondItem="GUi-43-nFJ" secondAttribute="centerX" id="ukY-of-vxN"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -57,6 +57,10 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="fbLoginView" destination="GUi-43-nFJ" id="eZ0-Hg-Dbb"/>
+                        <segue destination="Rhp-kK-vBJ" kind="show" identifier="LOGIN_TO_BUILD_TEAM_SEGUE" id="RF3-pO-JHS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
