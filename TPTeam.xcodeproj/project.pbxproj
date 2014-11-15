@@ -23,6 +23,8 @@
 		9DD0C2731A17129700A8F061 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C2581A17129700A8F061 /* README.txt */; };
 		9DD0C2741A17129700A8F061 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C25E1A17129700A8F061 /* LICENSE */; };
 		9DD0C2751A17129700A8F061 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C25F1A17129700A8F061 /* README.txt */; };
+		9DD0C2791A17B76200A8F061 /* GPS_TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0C2771A17B76200A8F061 /* GPS_TestViewController.swift */; };
+		9DD0C27A1A17B76200A8F061 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0C2781A17B76200A8F061 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		9DD0C2581A17129700A8F061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		9DD0C25E1A17129700A8F061 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9DD0C25F1A17129700A8F061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		9DD0C2771A17B76200A8F061 /* GPS_TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPS_TestViewController.swift; sourceTree = "<group>"; };
+		9DD0C2781A17B76200A8F061 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 		9D575F871A16C3490030A307 /* TPTeam */ = {
 			isa = PBXGroup;
 			children = (
+				9DD0C2771A17B76200A8F061 /* GPS_TestViewController.swift */,
+				9DD0C2781A17B76200A8F061 /* NotificationManager.swift */,
 				9D5763451A1706D30030A307 /* Singletons */,
 				9D575FAC1A16D2570030A307 /* ViewControllers */,
 				9DD0C2761A172ECB00A8F061 /* Views */,
@@ -302,10 +308,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D575FB01A16DF380030A307 /* TPToggleViewController.swift in Sources */,
+				9DD0C2791A17B76200A8F061 /* GPS_TestViewController.swift in Sources */,
 				9D575FAB1A16D2310030A307 /* BuildTeamViewController.swift in Sources */,
 				9D5763441A17068C0030A307 /* SessionManager.swift in Sources */,
 				9D575FAE1A16DE600030A307 /* NameTeamViewController.swift in Sources */,
 				9D5763421A16FE260030A307 /* LoginViewController.swift in Sources */,
+				9DD0C27A1A17B76200A8F061 /* NotificationManager.swift in Sources */,
 				9D575F8B1A16C3490030A307 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
