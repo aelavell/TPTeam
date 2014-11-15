@@ -5,8 +5,9 @@ class GPS_TestViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager : CLLocationManager?
     var gpsLocations = [String : CLLocation]()
-
-    let locationUpdateRate = 15.0
+    var uiApplication : UIApplication?
+ 
+    let locationUpdateRate = 5.0
     let tpNotificationRange = 500.0
 
     func nextPressed(sender : AnyObject) {
@@ -37,6 +38,8 @@ class GPS_TestViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager!.requestAlwaysAuthorization()
         self.locationManager?.pausesLocationUpdatesAutomatically = false
         self.locationManager?.startUpdatingLocation()
+        
+        
         /*************************************************************************/
         
         initGPSLocations();
@@ -54,26 +57,45 @@ class GPS_TestViewController: UIViewController, CLLocationManagerDelegate {
         
         
         var nearestTP = getClosestTP(currentLocation)
-        println(nearestTP)
+        println("\(nearestTP.0) \(nearestTP.1)")
         
-        if (tpNotificationRange > nearestTP){
+        if nearestTP.0 < 0{
+            return;
+        }
+        
+        if tpNotificationRange > nearestTP.0 {
             // Push notification for TP
-            
+            notifyUserAboutNearestTP(nearestTP.1)
+            println("Sent a notification")
         }
         
     }
     
-    func getClosestTP(currentLocation: CLLocation) -> Double {
+    func getClosestTP(currentLocation: CLLocation) -> (Double, String) {
         var distances : [Double] = []
         for key in gpsLocations.keys{
             distances.append(Double(currentLocation.distanceFromLocation(gpsLocations[key])))
         }
         
         if distances.count == 0 {
-            return -1
+            return (-1, "")
         }
         
-        return sorted(distances)[0]
+        distances = sorted(distances)
+        
+        var locationName = gpsLocations.keys.filter{
+            Double(currentLocation.distanceFromLocation(self.gpsLocations[$0])) == distances[0]
+        }.array[0]
+        
+        return (distances[0], locationName)
+    }
+    
+    func notifyUserAboutNearestTP(storeName : String) {
+        var localNotification = UILocalNotification()
+        localNotification.alertAction = "get TP"
+        localNotification.alertBody = "You can get TP at \(storeName)"
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
 
 }
