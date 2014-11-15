@@ -1,6 +1,9 @@
 import UIKit
 
 class BuildTeamViewController: UITableViewController {
+    
+    var sessionManager = SessionManager.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,10 +30,47 @@ class BuildTeamViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "BuildTeamTableViewCell")
         cell.textLabel.text = SessionManager.sharedInstance.friends[indexPath.row].name
+        
+        addButtonsToCell(cell, row: indexPath.row)
         return cell
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        SessionManager.sharedInstance.team.append(SessionManager.sharedInstance.friends[indexPath.row])
+
     }
+    
+    func addButtonsToCell(cell: UITableViewCell, row: Int){
+        var addButton = UIButton()
+        addButton.frame = CGRectMake(300.0, 10.0, 100.0, 20.0);
+        
+        var stateCharacter = "+"
+        if sessionManager.teammateInTeam(sessionManager.friends[row].name) {
+            stateCharacter = "-"
+        }
+        
+        addButton.setTitle(stateCharacter, forState: UIControlState.Normal)
+        addButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        addButton.addTarget(self,
+                            action: "addRemoveTeamAction:",
+                            forControlEvents: UIControlEvents.TouchUpInside)
+        addButton.tag = row
+        
+        cell.addSubview(addButton)
+    }
+    
+    func addRemoveTeamAction(sender: AnyObject){
+        var button = (sender as UIButton)
+        
+        if (button.titleLabel?.text == "+"){
+            sessionManager.team.append(sessionManager.friends[button.tag])
+            button.setTitle("-", forState: UIControlState.Normal)
+            println("Added \(sessionManager.friends[button.tag].name)");
+        }
+        else{
+            println("Removing \(sessionManager.friends[button.tag].name)");
+            sessionManager.removeTeammateByName(sessionManager.friends[button.tag].name)
+            button.setTitle("+", forState: UIControlState.Normal)
+        }
+    }
+    
 }

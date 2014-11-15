@@ -27,4 +27,28 @@ class SessionManager  {
     init() {
         // Get toggle status from the server and act accordingly
     }
+    
+    func removeTeammateByName(name: String) -> Bool{
+        var filteredFriends = team.filter{$0.name != name}
+        
+        if filteredFriends.count != friends.count {
+            team = filteredFriends
+            return true
+        }
+        
+        return false
+    }
+    
+    func teammateInTeam(name: String) -> Bool {
+        var friend = team.filter{$0.name == name}.first
+        return (friend != nil)
+    }
 }
+
+
+
+
+
+
+
+
