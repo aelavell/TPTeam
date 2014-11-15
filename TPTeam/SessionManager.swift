@@ -7,6 +7,13 @@ class SessionManager  {
     
     var fbUser : FBGraphUser?
     var friends : [AnyObject] = []
+    var team : [AnyObject] = []
+    var toggleStatus : Bool = false;
+    
+    func SetToggleStatus(state: Bool) {
+        toggleStatus = state;
+        
+    }
     
     init() {
         

@@ -11,18 +11,12 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
         
     }
-    
-    // Facebook Delegate Methods
-    
-    
+
     func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
         println("User Logged In")
     }
 
     func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
-        println("User: \(user)")
-        println("User ID: \(user.objectID)")
-        println("User Name: \(user.name)")
         var userEmail = user.objectForKey("email") as String
         println("User Email: \(userEmail)")
         // println(FBSession.activeSession().accessTokenData.accessToken)
