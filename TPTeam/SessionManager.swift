@@ -12,10 +12,15 @@ class SessionManager  {
     
     func SetToggleStatus(state: Bool) {
         toggleStatus = state;
-        
+        if toggleStatus {
+            NotificationManager.sharedInstance.gotTheTP()
+        }
+        else{
+            NotificationManager.sharedInstance.needsTheTP()
+        }
     }
     
     init() {
-        
+        // Get toggle status from the server and act accordingly
     }
 }
