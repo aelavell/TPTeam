@@ -13,6 +13,9 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     
     var locationManager : CLLocationManager?
     var gpsLocations = [String : CLLocation]()
+    var notificationTimer: NSTimer?
+    var needsTP = false;
+    var notified = false;
 
     let locationUpdateRate = 60.0    // Update frequency in seconds
     let tpNotificationRange = 500.0 // Range in meters
@@ -35,7 +38,6 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     func initGPS(){
         initGPSLocations()
         
-        /*********** This code should go wherever app init happens ???? **********/
         self.locationManager = CLLocationManager()
         self.locationManager!.delegate = self;
         if (!CLLocationManager.locationServicesEnabled()){
@@ -46,15 +48,17 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         self.locationManager?.pausesLocationUpdatesAutomatically = false
         self.locationManager?.startUpdatingLocation()
         
-        
-        /*************************************************************************/
-        
-        
-        var timer = NSTimer.scheduledTimerWithTimeInterval(locationUpdateRate,
-            target: self,
-            selector: Selector("updateCurrentLocation"),
-            userInfo: nil,
-            repeats: true)
+        needsTP = true
+        initTimer()
+    }
+    
+    func initTimer(){
+        notificationTimer = NSTimer.scheduledTimerWithTimeInterval(
+                                                            locationUpdateRate,
+                                                            target: self,
+                                                            selector: Selector("updateCurrentLocation"),
+                                                            userInfo: nil,
+                                                            repeats: true)
     }
     
     func getClosestTP(currentLocation: CLLocation) -> (Double, String) {
@@ -76,6 +80,17 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         return (distances[0], locationName)
     }
     
+    func gotTheTP(){
+        notificationTimer = NSTimer()
+        needsTP = false
+    }
+    
+    func needsTheTP(){
+        needsTP = true
+        notified = false
+        initTimer()
+    }
+    
     func notifyUserAboutNearestTP(storeName : String) {
         var localNotification = UILocalNotification()
         localNotification.alertAction = "get TP"
@@ -84,17 +99,18 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         localNotification.category = "INVITE_CATEGORY";
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        
+        notified = true
     }
     
     func updateCurrentLocation() {
         var currentLocation = locationManager!.location;
         println("Current Location: " + currentLocation.description)
         
-        
         var nearestTP = getClosestTP(currentLocation)
         println("\(nearestTP.0) \(nearestTP.1)")
         
-        if nearestTP.0 < 0{
+        if nearestTP.0 < 0 || notified {
             return;
         }
         
@@ -103,7 +119,6 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
             notifyUserAboutNearestTP(nearestTP.1)
             println("Sent a notification")
         }
-        
     }
 
 }
