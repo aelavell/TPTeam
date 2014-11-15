@@ -15,10 +15,16 @@
 		9D575FAB1A16D2310030A307 /* BuildTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FAA1A16D2310030A307 /* BuildTeamViewController.swift */; };
 		9D575FAE1A16DE600030A307 /* NameTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FAD1A16DE600030A307 /* NameTeamViewController.swift */; };
 		9D575FB01A16DF380030A307 /* TPToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FAF1A16DF380030A307 /* TPToggleViewController.swift */; };
-		D4C472B91A16FAFD0013C280 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C472B81A16FAFD0013C280 /* CoreLocation.framework */; };
-		D4C472BB1A16FB4F0013C280 /* GPS_TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C472BA1A16FB4F0013C280 /* GPS_TestViewController.swift */; };
-		D4C472BE1A172BE50013C280 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C472BD1A172BE50013C280 /* NotificationManager.swift */; };
-		D4C472C01A1732640013C280 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C472BF1A1732640013C280 /* AudioToolbox.framework */; };
+		9D5763421A16FE260030A307 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5763411A16FE260030A307 /* LoginViewController.swift */; };
+		9D5763441A17068C0030A307 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5763431A17068C0030A307 /* SessionManager.swift */; };
+		9DD0C2701A17129700A8F061 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD0C2541A17129700A8F061 /* Bolts.framework */; };
+		9DD0C2711A17129700A8F061 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD0C2551A17129700A8F061 /* FacebookSDK.framework */; };
+		9DD0C2721A17129700A8F061 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD0C2571A17129700A8F061 /* FBAudienceNetwork.framework */; };
+		9DD0C2731A17129700A8F061 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C2581A17129700A8F061 /* README.txt */; };
+		9DD0C2741A17129700A8F061 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C25E1A17129700A8F061 /* LICENSE */; };
+		9DD0C2751A17129700A8F061 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C25F1A17129700A8F061 /* README.txt */; };
+		9DD0C2791A17B76200A8F061 /* GPS_TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0C2771A17B76200A8F061 /* GPS_TestViewController.swift */; };
+		9DD0C27A1A17B76200A8F061 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0C2781A17B76200A8F061 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +50,17 @@
 		9D575FAA1A16D2310030A307 /* BuildTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildTeamViewController.swift; sourceTree = "<group>"; };
 		9D575FAD1A16DE600030A307 /* NameTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameTeamViewController.swift; sourceTree = "<group>"; };
 		9D575FAF1A16DF380030A307 /* TPToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPToggleViewController.swift; sourceTree = "<group>"; };
-		D4C472B81A16FAFD0013C280 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D4C472BA1A16FB4F0013C280 /* GPS_TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPS_TestViewController.swift; sourceTree = "<group>"; };
-		D4C472BD1A172BE50013C280 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		D4C472BF1A1732640013C280 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9D5763401A16FD3D0030A307 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		9D5763411A16FE260030A307 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9D5763431A17068C0030A307 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		9DD0C2541A17129700A8F061 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		9DD0C2551A17129700A8F061 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		9DD0C2571A17129700A8F061 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		9DD0C2581A17129700A8F061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		9DD0C25E1A17129700A8F061 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9DD0C25F1A17129700A8F061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		9DD0C2771A17B76200A8F061 /* GPS_TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPS_TestViewController.swift; sourceTree = "<group>"; };
+		9DD0C2781A17B76200A8F061 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C472C01A1732640013C280 /* AudioToolbox.framework in Frameworks */,
-				D4C472B91A16FAFD0013C280 /* CoreLocation.framework in Frameworks */,
+				9DD0C2721A17129700A8F061 /* FBAudienceNetwork.framework in Frameworks */,
+				9DD0C2701A17129700A8F061 /* Bolts.framework in Frameworks */,
+				9DD0C2711A17129700A8F061 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +87,7 @@
 		9D575F7C1A16C3490030A307 = {
 			isa = PBXGroup;
 			children = (
-				D4C472BF1A1732640013C280 /* AudioToolbox.framework */,
-				D4C472B81A16FAFD0013C280 /* CoreLocation.framework */,
+				9D5761691A16F93A0030A307 /* External */,
 				9D575F871A16C3490030A307 /* TPTeam */,
 				9D575F9D1A16C3490030A307 /* TPTeamTests */,
 				9D575F861A16C3490030A307 /* Products */,
@@ -93,8 +106,12 @@
 		9D575F871A16C3490030A307 /* TPTeam */ = {
 			isa = PBXGroup;
 			children = (
-				D4C472BC1A172BD40013C280 /* Managers */,
+				9DD0C2771A17B76200A8F061 /* GPS_TestViewController.swift */,
+				9DD0C2781A17B76200A8F061 /* NotificationManager.swift */,
+				9D5763451A1706D30030A307 /* Singletons */,
 				9D575FAC1A16D2570030A307 /* ViewControllers */,
+				9DD0C2761A172ECB00A8F061 /* Views */,
+				9D5763401A16FD3D0030A307 /* Bridging-Header.h */,
 				9D575F8A1A16C3490030A307 /* AppDelegate.swift */,
 				9D575FA01A16C3490030A307 /* TPTeamTests.swift */,
 				9D575F8E1A16C3490030A307 /* Main.storyboard */,
@@ -135,17 +152,54 @@
 				9D575FAA1A16D2310030A307 /* BuildTeamViewController.swift */,
 				9D575FAD1A16DE600030A307 /* NameTeamViewController.swift */,
 				9D575FAF1A16DF380030A307 /* TPToggleViewController.swift */,
-				D4C472BA1A16FB4F0013C280 /* GPS_TestViewController.swift */,
+				9D5763411A16FE260030A307 /* LoginViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		D4C472BC1A172BD40013C280 /* Managers */ = {
+		9D5761691A16F93A0030A307 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				D4C472BD1A172BE50013C280 /* NotificationManager.swift */,
+				9DD0C2531A17129700A8F061 /* FacebookSDK */,
 			);
-			name = Managers;
+			name = External;
+			sourceTree = "<group>";
+		};
+		9D5763451A1706D30030A307 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				9D5763431A17068C0030A307 /* SessionManager.swift */,
+			);
+			name = Singletons;
+			sourceTree = "<group>";
+		};
+		9DD0C2531A17129700A8F061 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0C2541A17129700A8F061 /* Bolts.framework */,
+				9DD0C2551A17129700A8F061 /* FacebookSDK.framework */,
+				9DD0C2561A17129700A8F061 /* FBAudienceNetwork */,
+				9DD0C25E1A17129700A8F061 /* LICENSE */,
+				9DD0C25F1A17129700A8F061 /* README.txt */,
+			);
+			name = FacebookSDK;
+			path = ../../Documents/FacebookSDK;
+			sourceTree = "<group>";
+		};
+		9DD0C2561A17129700A8F061 /* FBAudienceNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0C2571A17129700A8F061 /* FBAudienceNetwork.framework */,
+				9DD0C2581A17129700A8F061 /* README.txt */,
+			);
+			path = FBAudienceNetwork;
+			sourceTree = "<group>";
+		};
+		9DD0C2761A172ECB00A8F061 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,11 +252,6 @@
 					9D575F841A16C3490030A307 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 4AYK7EYG4B;
-						SystemCapabilities = {
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
-						};
 					};
 					9D575F991A16C3490030A307 = {
 						CreatedOnToolsVersion = 6.1;
@@ -217,6 +266,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = 9D575F7C1A16C3490030A307;
 			productRefGroup = 9D575F861A16C3490030A307 /* Products */;
@@ -236,7 +286,10 @@
 			files = (
 				9D575F901A16C3490030A307 /* Main.storyboard in Resources */,
 				9D575F951A16C3490030A307 /* LaunchScreen.xib in Resources */,
+				9DD0C2731A17129700A8F061 /* README.txt in Resources */,
 				9D575F921A16C3490030A307 /* Images.xcassets in Resources */,
+				9DD0C2751A17129700A8F061 /* README.txt in Resources */,
+				9DD0C2741A17129700A8F061 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,11 +307,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4C472BE1A172BE50013C280 /* NotificationManager.swift in Sources */,
 				9D575FB01A16DF380030A307 /* TPToggleViewController.swift in Sources */,
+				9DD0C2791A17B76200A8F061 /* GPS_TestViewController.swift in Sources */,
 				9D575FAB1A16D2310030A307 /* BuildTeamViewController.swift in Sources */,
+				9D5763441A17068C0030A307 /* SessionManager.swift in Sources */,
 				9D575FAE1A16DE600030A307 /* NameTeamViewController.swift in Sources */,
-				D4C472BB1A16FB4F0013C280 /* GPS_TestViewController.swift in Sources */,
+				9D5763421A16FE260030A307 /* LoginViewController.swift in Sources */,
+				9DD0C27A1A17B76200A8F061 /* NotificationManager.swift in Sources */,
 				9D575F8B1A16C3490030A307 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,12 +437,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/allan/Documents/FacebookSDK,
+					/Users/allan/Documents/FacebookSDK/FBAudienceNetwork,
+				);
 				INFOPLIST_FILE = TPTeam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TPTeam/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -395,12 +453,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/allan/Documents/FacebookSDK,
+					/Users/allan/Documents/FacebookSDK/FBAudienceNetwork,
+				);
 				INFOPLIST_FILE = TPTeam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TPTeam/Bridging-Header.h";
 			};
 			name = Release;
 		};
