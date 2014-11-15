@@ -17,6 +17,7 @@
 		9D575FB01A16DF380030A307 /* TPToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FAF1A16DF380030A307 /* TPToggleViewController.swift */; };
 		D4C472B91A16FAFD0013C280 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C472B81A16FAFD0013C280 /* CoreLocation.framework */; };
 		D4C472BB1A16FB4F0013C280 /* GPS_TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C472BA1A16FB4F0013C280 /* GPS_TestViewController.swift */; };
+		D4C472BE1A172BE50013C280 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C472BD1A172BE50013C280 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		9D575FAF1A16DF380030A307 /* TPToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPToggleViewController.swift; sourceTree = "<group>"; };
 		D4C472B81A16FAFD0013C280 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D4C472BA1A16FB4F0013C280 /* GPS_TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPS_TestViewController.swift; sourceTree = "<group>"; };
+		D4C472BD1A172BE50013C280 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		9D575F871A16C3490030A307 /* TPTeam */ = {
 			isa = PBXGroup;
 			children = (
+				D4C472BC1A172BD40013C280 /* Managers */,
 				9D575FAC1A16D2570030A307 /* ViewControllers */,
 				9D575F8A1A16C3490030A307 /* AppDelegate.swift */,
 				9D575FA01A16C3490030A307 /* TPTeamTests.swift */,
@@ -131,6 +134,14 @@
 				D4C472BA1A16FB4F0013C280 /* GPS_TestViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D4C472BC1A172BD40013C280 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D4C472BD1A172BE50013C280 /* NotificationManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4C472BE1A172BE50013C280 /* NotificationManager.swift in Sources */,
 				9D575FB01A16DF380030A307 /* TPToggleViewController.swift in Sources */,
 				9D575FAB1A16D2310030A307 /* BuildTeamViewController.swift in Sources */,
 				9D575FAE1A16DE600030A307 /* NameTeamViewController.swift in Sources */,
