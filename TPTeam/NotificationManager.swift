@@ -14,7 +14,7 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     var locationManager : CLLocationManager?
     var gpsLocations = [String : CLLocation]()
 
-    let locationUpdateRate = 5.0    // Update frequency in seconds
+    let locationUpdateRate = 60.0    // Update frequency in seconds
     let tpNotificationRange = 500.0 // Range in meters
     
     override init() {

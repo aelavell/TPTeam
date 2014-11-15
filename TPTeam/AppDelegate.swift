@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        /****** Setup for background local notifications ******/
         var notificationActionOk :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         notificationActionOk.identifier = "ACCEPT_IDENTIFIER"
         notificationActionOk.title = "Ok"
@@ -41,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             ))
         
         NotificationManager.sharedInstance.initGPS()
+        /****************************************************/
         
         return true
     }
