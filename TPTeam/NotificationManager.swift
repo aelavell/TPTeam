@@ -13,11 +13,14 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     
     var locationManager : CLLocationManager?
     var gpsLocations = [String : CLLocation]()
+    var uiApplication: UIApplication?
     var notificationTimer: NSTimer?
+    var dateTime = NSDate()
+    var calendar = NSCalendar()
     var needsTP = false;
     var notified = false;
 
-    let locationUpdateRate = 60.0    // Update frequency in seconds
+    let locationUpdateRate = 10.0    // Update frequency in seconds
     let tpNotificationRange = 500.0 // Range in meters
     
     override init() {
@@ -53,13 +56,19 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func initTimer(){
-        notificationTimer = NSTimer.scheduledTimerWithTimeInterval(
-                                                            locationUpdateRate,
-                                                            target: self,
-                                                            selector: Selector("updateCurrentLocation"),
-                                                            userInfo: nil,
-                                                            repeats: true)
+        notificationTimer = NSTimer.scheduledTimerWithTimeInterval(0,
+                                                                   target: self,
+                                                                   selector: Selector("updateTPStatus"),
+                                                                   userInfo: nil,
+                                                                   repeats: false)
+
+        notificationTimer = NSTimer.scheduledTimerWithTimeInterval(locationUpdateRate,
+                                                                   target: self,
+                                                                   selector: Selector("updateTPStatus"),
+                                                                   userInfo: nil,
+                                                                   repeats: true)
     }
+
     
     func getClosestTP(currentLocation: CLLocation) -> (Double, String) {
         var distances : [Double] = []
@@ -92,15 +101,48 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func notifyUserAboutNearestTP(storeName : String) {
-        var localNotification = UILocalNotification()
-        localNotification.alertAction = "get TP"
-        localNotification.alertBody = "You can get TP at \(storeName)"
-        localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
-        localNotification.category = "INVITE_CATEGORY";
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+
+        var notificationMessage = "You can get TP at \(storeName)"
+        
+        if (uiApplication?.applicationState == UIApplicationState.Active){
+            var alertController = UIAlertController(title: "TP Proximity Alert",
+                                                    message: notificationMessage,
+                                                    preferredStyle: .Alert)
+            
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
+                // OK CODEEEE
+            }
+            
+            alertController.addAction(OKAction)
+            
+            getTopmostViewController().presentViewController(alertController,
+                                                             animated: true,
+                                                             {() -> Void in return})
+        }
+        else{
+            var localNotification = UILocalNotification()
+            localNotification.alertAction = "get TP"
+            localNotification.alertBody = notificationMessage
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
+            localNotification.category = "BACKGROUND_NOTIFICATION";
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        }
+        
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         
         notified = true
+        dateTime = NSDate()
+        println(dateTime.description)
+    }
+    
+    func getTopmostViewController() -> UIViewController{
+        var rootController = uiApplication?.keyWindow?.rootViewController
+        
+        while rootController?.presentedViewController != nil {
+            rootController = rootController?.presentedViewController
+        }
+        
+        return rootController!
     }
     
     func updateCurrentLocation() {
@@ -110,7 +152,7 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         var nearestTP = getClosestTP(currentLocation)
         println("\(nearestTP.0) \(nearestTP.1)")
         
-        if nearestTP.0 < 0 || notified {
+        if nearestTP.0 < 0 {
             return;
         }
         
@@ -119,6 +161,50 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
             notifyUserAboutNearestTP(nearestTP.1)
             println("Sent a notification")
         }
+    }
+    
+    func updateTPStatus(){
+        
+        println(dateTime.timeIntervalSinceNow.description);
+
+        if !notified {
+            updateCurrentLocation()
+        }
+        else {
+            
+        }
+    }
+    
+    func initializeNotificationTypes(application: UIApplication){
+        var notificationBackgroundActionOk :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        notificationBackgroundActionOk.identifier = "BACKGROUND_ACCEPT_IDENTIFIER"
+        notificationBackgroundActionOk.title = "Ok"
+        notificationBackgroundActionOk.destructive = false
+        notificationBackgroundActionOk.authenticationRequired = false
+        notificationBackgroundActionOk.activationMode = UIUserNotificationActivationMode.Background
+        
+        var notificationBackgroundActionCancel :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        notificationBackgroundActionCancel.identifier = "BACKGROUND_NOT_NOW_IDENTIFIER"
+        notificationBackgroundActionCancel.title = "Not Now"
+        notificationBackgroundActionCancel.destructive = true
+        notificationBackgroundActionCancel.authenticationRequired = false
+        notificationBackgroundActionCancel.activationMode = UIUserNotificationActivationMode.Background
+
+        
+        var backgroundNotification:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        backgroundNotification.identifier = "BACKGROUND_NOTIFICATION"
+        backgroundNotification.setActions([notificationBackgroundActionOk,
+                                           notificationBackgroundActionCancel],
+                                           forContext: UIUserNotificationActionContext.Default)
+        backgroundNotification.setActions([notificationBackgroundActionOk,
+                                           notificationBackgroundActionCancel],
+                                           forContext: UIUserNotificationActionContext.Minimal)
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound | UIUserNotificationType.Alert |
+            UIUserNotificationType.Badge, categories: NSSet(array:[backgroundNotification])
+            ))
+        
+        uiApplication = application
     }
 
 }
