@@ -20,8 +20,9 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     var needsTP = false;
     var notified = false;
 
-    let locationUpdateRate = 10.0    // Update frequency in seconds
+    let locationUpdateRate = 60.0    // Update frequency in seconds
     let tpNotificationRange = 500.0 // Range in meters
+    let timeToWaitAfterNotification = 60 * 60 * 4 // Time in seconds = 4 hours
     
     override init() {
         super.init()
@@ -132,7 +133,6 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         
         notified = true
         dateTime = NSDate()
-        println(dateTime.description)
     }
     
     func getTopmostViewController() -> UIViewController{
@@ -157,21 +157,18 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         }
         
         if tpNotificationRange > nearestTP.0 {
-            // Push notification for TP
             notifyUserAboutNearestTP(nearestTP.1)
             println("Sent a notification")
         }
     }
     
     func updateTPStatus(){
-        
-        println(dateTime.timeIntervalSinceNow.description);
-
         if !notified {
             updateCurrentLocation()
         }
-        else {
-            
+        else if (NSInteger(dateTime.timeIntervalSinceNow) * -1) >= timeToWaitAfterNotification {
+            notified = false
+            println("reset notifications");
         }
     }
     
