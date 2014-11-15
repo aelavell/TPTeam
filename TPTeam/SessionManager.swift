@@ -6,6 +6,7 @@ class SessionManager  {
     }
     
     var fbUser : FBGraphUser?
+    var friends : [AnyObject] = []
     
     init() {
         

@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
     
     // Facebook Delegate Methods
     
+    
     func loginViewShowingLoggedInUser(loginView : FBLoginView!) {
         println("User Logged In")
     }
@@ -24,7 +25,7 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         println("User Name: \(user.name)")
         var userEmail = user.objectForKey("email") as String
         println("User Email: \(userEmail)")
-        
+        // println(FBSession.activeSession().accessTokenData.accessToken)
         SessionManager.sharedInstance.fbUser = user
         loginToTPTServer(user)
     }

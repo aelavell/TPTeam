@@ -83,7 +83,6 @@
 		9D575F7C1A16C3490030A307 = {
 			isa = PBXGroup;
 			children = (
-				9DD0C2531A17129700A8F061 /* FacebookSDK */,
 				9D5761691A16F93A0030A307 /* External */,
 				9D575F871A16C3490030A307 /* TPTeam */,
 				9D575F9D1A16C3490030A307 /* TPTeamTests */,
@@ -154,6 +153,7 @@
 		9D5761691A16F93A0030A307 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				9DD0C2531A17129700A8F061 /* FacebookSDK */,
 			);
 			name = External;
 			sourceTree = "<group>";
