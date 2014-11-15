@@ -1,16 +1,8 @@
-//
-//  BuildTeamViewController.swift
-//  TPTeam
-//
-//  Created by Allan Lavell on 2014-11-14.
-//  Copyright (c) 2014 ThinkRad. All rights reserved.
-//
-
 import UIKit
 
 class BuildTeamViewController: UITableViewController {
     func nextPressed(sender : AnyObject) {
-        self.performSegueWithIdentifier("NAME_TEAM_SEGUE", sender: self)
+        self.performSegueWithIdentifier("BUILD_TEAM_TO_NAME_TEAM_SEGUE", sender: self)
     }
     
     override func viewDidLoad() {

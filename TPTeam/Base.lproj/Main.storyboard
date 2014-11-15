@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -61,6 +62,26 @@
             </objects>
             <point key="canvasLocation" x="-547.5" y="125.5"/>
         </scene>
+        <!--Toggle View Controller-->
+        <scene sceneID="rAD-bp-8av">
+            <objects>
+                <viewController id="9Fb-lq-Xlp" customClass="TPToggleViewController" customModule="TPTeam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F1O-IS-it0"/>
+                        <viewControllerLayoutGuide type="bottom" id="JQR-w8-Wmb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AGc-Sw-F8B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7Z-vx-0rN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.5" y="947.5"/>
+        </scene>
         <!--BUILD YR TEAM-->
         <scene sceneID="BA8-A2-MHb">
             <objects>
@@ -96,7 +117,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="BUILD YR TEAM" id="IoY-Yb-foj" userLabel="Title"/>
                     <connections>
-                        <segue destination="tne-EP-Onv" kind="show" identifier="NAME_TEAM_SEGUE" id="eDN-Lq-Ts3"/>
+                        <segue destination="tne-EP-Onv" kind="show" identifier="BUILD_TEAM_TO_NAME_TEAM_SEGUE" id="eDN-Lq-Ts3"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUB-ao-zda" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -106,7 +127,7 @@
         <!--NAME YR TEAM-->
         <scene sceneID="7Rv-zh-oZl">
             <objects>
-                <viewController id="tne-EP-Onv" sceneMemberID="viewController">
+                <viewController id="tne-EP-Onv" customClass="NameTeamViewController" customModule="TPTeam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L3z-fO-yet"/>
                         <viewControllerLayoutGuide type="bottom" id="VTY-Ov-pb4"/>
@@ -114,11 +135,27 @@
                     <view key="view" contentMode="scaleToFill" id="6eO-ba-eTm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="TEAM NAME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n5J-Mh-bvg">
+                                <rect key="frame" x="16" y="321" width="343" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="n5J-Mh-bvg" secondAttribute="trailing" id="FgJ-Ye-nVZ"/>
+                            <constraint firstAttribute="centerX" secondItem="n5J-Mh-bvg" secondAttribute="centerX" id="TDx-rF-UvZ"/>
+                            <constraint firstItem="n5J-Mh-bvg" firstAttribute="leading" secondItem="6eO-ba-eTm" secondAttribute="leadingMargin" id="blc-Fu-xwt"/>
+                            <constraint firstAttribute="centerY" secondItem="n5J-Mh-bvg" secondAttribute="centerY" id="hPc-na-T17"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="NAME YR TEAM" id="ooC-mI-y5G" userLabel="Title"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <segue destination="9Fb-lq-Xlp" kind="showDetail" identifier="NAME_TEAM_TO_TPTOGGLE_SEGUE" id="CEU-if-K9u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLM-2g-54M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

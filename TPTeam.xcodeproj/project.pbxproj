@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		9D575F8B1A16C3490030A307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575F8A1A16C3490030A307 /* AppDelegate.swift */; };
-		9D575F8D1A16C3490030A307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575F8C1A16C3490030A307 /* ViewController.swift */; };
 		9D575F901A16C3490030A307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D575F8E1A16C3490030A307 /* Main.storyboard */; };
 		9D575F921A16C3490030A307 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D575F911A16C3490030A307 /* Images.xcassets */; };
 		9D575F951A16C3490030A307 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D575F931A16C3490030A307 /* LaunchScreen.xib */; };
 		9D575FA11A16C3490030A307 /* TPTeamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FA01A16C3490030A307 /* TPTeamTests.swift */; };
 		9D575FAB1A16D2310030A307 /* BuildTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FAA1A16D2310030A307 /* BuildTeamViewController.swift */; };
+		9D575FAE1A16DE600030A307 /* NameTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FAD1A16DE600030A307 /* NameTeamViewController.swift */; };
+		9D575FB01A16DF380030A307 /* TPToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FAF1A16DF380030A307 /* TPToggleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +31,6 @@
 		9D575F851A16C3490030A307 /* TPTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D575F891A16C3490030A307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D575F8A1A16C3490030A307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9D575F8C1A16C3490030A307 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9D575F8F1A16C3490030A307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D575F911A16C3490030A307 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9D575F941A16C3490030A307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		9D575F9F1A16C3490030A307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D575FA01A16C3490030A307 /* TPTeamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TPTeamTests.swift; path = TPTeamTests/TPTeamTests.swift; sourceTree = SOURCE_ROOT; };
 		9D575FAA1A16D2310030A307 /* BuildTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildTeamViewController.swift; sourceTree = "<group>"; };
+		9D575FAD1A16DE600030A307 /* NameTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameTeamViewController.swift; sourceTree = "<group>"; };
+		9D575FAF1A16DF380030A307 /* TPToggleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPToggleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				9D575FAA1A16D2310030A307 /* BuildTeamViewController.swift */,
-				9D575F8C1A16C3490030A307 /* ViewController.swift */,
+				9D575FAD1A16DE600030A307 /* NameTeamViewController.swift */,
+				9D575FAF1A16DF380030A307 /* TPToggleViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -223,8 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D575FB01A16DF380030A307 /* TPToggleViewController.swift in Sources */,
 				9D575FAB1A16D2310030A307 /* BuildTeamViewController.swift in Sources */,
-				9D575F8D1A16C3490030A307 /* ViewController.swift in Sources */,
+				9D575FAE1A16DE600030A307 /* NameTeamViewController.swift in Sources */,
 				9D575F8B1A16C3490030A307 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
