@@ -13,6 +13,7 @@
 		9D575F921A16C3490030A307 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D575F911A16C3490030A307 /* Images.xcassets */; };
 		9D575F951A16C3490030A307 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D575F931A16C3490030A307 /* LaunchScreen.xib */; };
 		9D575FA11A16C3490030A307 /* TPTeamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FA01A16C3490030A307 /* TPTeamTests.swift */; };
+		9D575FAB1A16D2310030A307 /* BuildTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FAA1A16D2310030A307 /* BuildTeamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,8 @@
 		9D575F941A16C3490030A307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9D575F9A1A16C3490030A307 /* TPTeamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPTeamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D575F9F1A16C3490030A307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9D575FA01A16C3490030A307 /* TPTeamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPTeamTests.swift; sourceTree = "<group>"; };
+		9D575FA01A16C3490030A307 /* TPTeamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TPTeamTests.swift; path = TPTeamTests/TPTeamTests.swift; sourceTree = SOURCE_ROOT; };
+		9D575FAA1A16D2310030A307 /* BuildTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildTeamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,9 @@
 		9D575F871A16C3490030A307 /* TPTeam */ = {
 			isa = PBXGroup;
 			children = (
+				9D575FAC1A16D2570030A307 /* ViewControllers */,
 				9D575F8A1A16C3490030A307 /* AppDelegate.swift */,
-				9D575F8C1A16C3490030A307 /* ViewController.swift */,
+				9D575FA01A16C3490030A307 /* TPTeamTests.swift */,
 				9D575F8E1A16C3490030A307 /* Main.storyboard */,
 				9D575F911A16C3490030A307 /* Images.xcassets */,
 				9D575F931A16C3490030A307 /* LaunchScreen.xib */,
@@ -98,7 +101,6 @@
 		9D575F9D1A16C3490030A307 /* TPTeamTests */ = {
 			isa = PBXGroup;
 			children = (
-				9D575FA01A16C3490030A307 /* TPTeamTests.swift */,
 				9D575F9E1A16C3490030A307 /* Supporting Files */,
 			);
 			path = TPTeamTests;
@@ -110,6 +112,15 @@
 				9D575F9F1A16C3490030A307 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9D575FAC1A16D2570030A307 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D575FAA1A16D2310030A307 /* BuildTeamViewController.swift */,
+				9D575F8C1A16C3490030A307 /* ViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D575FAB1A16D2310030A307 /* BuildTeamViewController.swift in Sources */,
 				9D575F8D1A16C3490030A307 /* ViewController.swift in Sources */,
 				9D575F8B1A16C3490030A307 /* AppDelegate.swift in Sources */,
 			);
@@ -405,6 +417,7 @@
 				9D575FA61A16C3490030A307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D575FA71A16C3490030A307 /* Build configuration list for PBXNativeTarget "TPTeamTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +426,7 @@
 				9D575FA91A16C3490030A307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

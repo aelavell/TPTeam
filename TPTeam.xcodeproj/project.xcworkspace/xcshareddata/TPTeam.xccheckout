@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E755927A-314E-4AD8-AFE0-1F4A63BC66D7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TPTeam</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>842D9D2A974E4816BDDE03A245F5930C6C2EA6FA</key>
+		<string>github.com:thinkrad/TPTeam.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TPTeam.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>842D9D2A974E4816BDDE03A245F5930C6C2EA6FA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:thinkrad/TPTeam.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>842D9D2A974E4816BDDE03A245F5930C6C2EA6FA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>842D9D2A974E4816BDDE03A245F5930C6C2EA6FA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TPTeam</string>
+		</dict>
+	</array>
+</dict>
+</plist>
