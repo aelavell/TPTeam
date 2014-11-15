@@ -17,14 +17,15 @@
 		9D575FB01A16DF380030A307 /* TPToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D575FAF1A16DF380030A307 /* TPToggleViewController.swift */; };
 		9D5763421A16FE260030A307 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5763411A16FE260030A307 /* LoginViewController.swift */; };
 		9D5763441A17068C0030A307 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5763431A17068C0030A307 /* SessionManager.swift */; };
+		9DD0C2701A17129700A8F061 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD0C2541A17129700A8F061 /* Bolts.framework */; };
+		9DD0C2711A17129700A8F061 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD0C2551A17129700A8F061 /* FacebookSDK.framework */; };
+		9DD0C2721A17129700A8F061 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD0C2571A17129700A8F061 /* FBAudienceNetwork.framework */; };
+		9DD0C2731A17129700A8F061 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C2581A17129700A8F061 /* README.txt */; };
+		9DD0C2741A17129700A8F061 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C25E1A17129700A8F061 /* LICENSE */; };
+		9DD0C2751A17129700A8F061 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C25F1A17129700A8F061 /* README.txt */; };
 		9DD0C2791A17B76200A8F061 /* GPS_TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0C2771A17B76200A8F061 /* GPS_TestViewController.swift */; };
 		9DD0C27A1A17B76200A8F061 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD0C2781A17B76200A8F061 /* NotificationManager.swift */; };
-		D478A9BA1A17DA5B00748B1B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A8A41A17DA5900748B1B /* Bolts.framework */; };
-		D478A9BB1A17DA5B00748B1B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A8A51A17DA5900748B1B /* FacebookSDK.framework */; };
-		D478A9BC1A17DA5B00748B1B /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A8A71A17DA5900748B1B /* FBAudienceNetwork.framework */; };
-		D478A9BD1A17DA5B00748B1B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = D478A8A81A17DA5900748B1B /* README.txt */; };
-		D478A9D51A17DA5B00748B1B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D478A8D31A17DA5A00748B1B /* LICENSE */; };
-		D478A9D61A17DA5B00748B1B /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = D478A8D41A17DA5A00748B1B /* README.txt */; };
+		9DD0C2891A17EB2800A8F061 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 9DD0C2811A17EA3A00A8F061 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,42 @@
 			remoteGlobalIDString = 9D575F841A16C3490030A307;
 			remoteInfo = TPTeam;
 		};
+		9DD0C2801A17EA3A00A8F061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DD0C27B1A17EA3A00A8F061 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		9DD0C2821A17EA3A00A8F061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DD0C27B1A17EA3A00A8F061 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		9DD0C2861A17EABC00A8F061 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DD0C27B1A17EA3A00A8F061 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9DD0C2881A17EB1000A8F061 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DD0C2891A17EB2800A8F061 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9D575F851A16C3490030A307 /* TPTeam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TPTeam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,14 +89,15 @@
 		9D5763401A16FD3D0030A307 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		9D5763411A16FE260030A307 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9D5763431A17068C0030A307 /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		9DD0C2541A17129700A8F061 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		9DD0C2551A17129700A8F061 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		9DD0C2571A17129700A8F061 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
+		9DD0C2581A17129700A8F061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		9DD0C25E1A17129700A8F061 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9DD0C25F1A17129700A8F061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		9DD0C2771A17B76200A8F061 /* GPS_TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPS_TestViewController.swift; sourceTree = "<group>"; };
 		9DD0C2781A17B76200A8F061 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		D478A8A41A17DA5900748B1B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		D478A8A51A17DA5900748B1B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		D478A8A71A17DA5900748B1B /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
-		D478A8A81A17DA5900748B1B /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		D478A8D31A17DA5A00748B1B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D478A8D41A17DA5A00748B1B /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		9DD0C27B1A17EA3A00A8F061 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,9 +105,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D478A9BC1A17DA5B00748B1B /* FBAudienceNetwork.framework in Frameworks */,
-				D478A9BA1A17DA5B00748B1B /* Bolts.framework in Frameworks */,
-				D478A9BB1A17DA5B00748B1B /* FacebookSDK.framework in Frameworks */,
+				9DD0C2721A17129700A8F061 /* FBAudienceNetwork.framework in Frameworks */,
+				9DD0C2701A17129700A8F061 /* Bolts.framework in Frameworks */,
+				9DD0C2711A17129700A8F061 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +197,8 @@
 		9D5761691A16F93A0030A307 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				D478A8A31A17DA5900748B1B /* FacebookSDK */,
+				9DD0C27B1A17EA3A00A8F061 /* Alamofire.xcodeproj */,
+				9DD0C2531A17129700A8F061 /* FacebookSDK */,
 			);
 			name = External;
 			sourceTree = "<group>";
@@ -173,6 +211,28 @@
 			name = Singletons;
 			sourceTree = "<group>";
 		};
+		9DD0C2531A17129700A8F061 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0C2541A17129700A8F061 /* Bolts.framework */,
+				9DD0C2551A17129700A8F061 /* FacebookSDK.framework */,
+				9DD0C2561A17129700A8F061 /* FBAudienceNetwork */,
+				9DD0C25E1A17129700A8F061 /* LICENSE */,
+				9DD0C25F1A17129700A8F061 /* README.txt */,
+			);
+			name = FacebookSDK;
+			path = ../../Documents/FacebookSDK;
+			sourceTree = "<group>";
+		};
+		9DD0C2561A17129700A8F061 /* FBAudienceNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				9DD0C2571A17129700A8F061 /* FBAudienceNetwork.framework */,
+				9DD0C2581A17129700A8F061 /* README.txt */,
+			);
+			path = FBAudienceNetwork;
+			sourceTree = "<group>";
+		};
 		9DD0C2761A172ECB00A8F061 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,26 +240,13 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		D478A8A31A17DA5900748B1B /* FacebookSDK */ = {
+		9DD0C27C1A17EA3A00A8F061 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D478A8A41A17DA5900748B1B /* Bolts.framework */,
-				D478A8A51A17DA5900748B1B /* FacebookSDK.framework */,
-				D478A8A61A17DA5900748B1B /* FBAudienceNetwork */,
-				D478A8D31A17DA5A00748B1B /* LICENSE */,
-				D478A8D41A17DA5A00748B1B /* README.txt */,
+				9DD0C2811A17EA3A00A8F061 /* Alamofire.framework */,
+				9DD0C2831A17EA3A00A8F061 /* AlamofireTests.xctest */,
 			);
-			name = FacebookSDK;
-			path = ../../../Documents/FacebookSDK;
-			sourceTree = "<group>";
-		};
-		D478A8A61A17DA5900748B1B /* FBAudienceNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				D478A8A71A17DA5900748B1B /* FBAudienceNetwork.framework */,
-				D478A8A81A17DA5900748B1B /* README.txt */,
-			);
-			path = FBAudienceNetwork;
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,10 +259,12 @@
 				9D575F811A16C3490030A307 /* Sources */,
 				9D575F821A16C3490030A307 /* Frameworks */,
 				9D575F831A16C3490030A307 /* Resources */,
+				9DD0C2881A17EB1000A8F061 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9DD0C2871A17EABC00A8F061 /* PBXTargetDependency */,
 			);
 			name = TPTeam;
 			productName = TPTeam;
@@ -271,6 +320,12 @@
 			mainGroup = 9D575F7C1A16C3490030A307;
 			productRefGroup = 9D575F861A16C3490030A307 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9DD0C27C1A17EA3A00A8F061 /* Products */;
+					ProjectRef = 9DD0C27B1A17EA3A00A8F061 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9D575F841A16C3490030A307 /* TPTeam */,
@@ -279,6 +334,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		9DD0C2811A17EA3A00A8F061 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 9DD0C2801A17EA3A00A8F061 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9DD0C2831A17EA3A00A8F061 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = 9DD0C2821A17EA3A00A8F061 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		9D575F831A16C3490030A307 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -286,10 +358,10 @@
 			files = (
 				9D575F901A16C3490030A307 /* Main.storyboard in Resources */,
 				9D575F951A16C3490030A307 /* LaunchScreen.xib in Resources */,
-				D478A9BD1A17DA5B00748B1B /* README.txt in Resources */,
+				9DD0C2731A17129700A8F061 /* README.txt in Resources */,
 				9D575F921A16C3490030A307 /* Images.xcassets in Resources */,
-				D478A9D51A17DA5B00748B1B /* LICENSE in Resources */,
-				D478A9D61A17DA5B00748B1B /* README.txt in Resources */,
+				9DD0C2751A17129700A8F061 /* README.txt in Resources */,
+				9DD0C2741A17129700A8F061 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +405,11 @@
 			isa = PBXTargetDependency;
 			target = 9D575F841A16C3490030A307 /* TPTeam */;
 			targetProxy = 9D575F9B1A16C3490030A307 /* PBXContainerItemProxy */;
+		};
+		9DD0C2871A17EABC00A8F061 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = 9DD0C2861A17EABC00A8F061 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -441,10 +518,9 @@
 					"$(inherited)",
 					/Users/allan/Documents/FacebookSDK,
 					/Users/allan/Documents/FacebookSDK/FBAudienceNetwork,
-					/Users/rob/Documents/FacebookSDK,
-					/Users/rob/Documents/FacebookSDK/FBAudienceNetwork,
 				);
 				INFOPLIST_FILE = TPTeam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TPTeam/Bridging-Header.h";
@@ -459,10 +535,9 @@
 					"$(inherited)",
 					/Users/allan/Documents/FacebookSDK,
 					/Users/allan/Documents/FacebookSDK/FBAudienceNetwork,
-					/Users/rob/Documents/FacebookSDK,
-					/Users/rob/Documents/FacebookSDK/FBAudienceNetwork,
 				);
 				INFOPLIST_FILE = TPTeam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "TPTeam/Bridging-Header.h";

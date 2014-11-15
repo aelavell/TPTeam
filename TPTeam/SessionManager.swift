@@ -10,6 +10,10 @@ class SessionManager  {
     var team : [AnyObject] = []
     var toggleStatus : Bool = false;
     
+    func loginToTPTServer() {
+        
+    }
+    
     func SetToggleStatus(state: Bool) {
         toggleStatus = state;
         if toggleStatus {
