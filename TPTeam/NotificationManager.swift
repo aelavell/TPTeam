@@ -1,5 +1,6 @@
 import CoreLocation
 import UIKit
+import AudioToolbox.AudioServices
 
 class NotificationManager: NSObject, CLLocationManagerDelegate {
 
@@ -32,7 +33,6 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func initGPS(){
-        println("Called this shit")
         initGPSLocations()
         
         /*********** This code should go wherever app init happens ???? **********/
@@ -83,6 +83,7 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         localNotification.fireDate = NSDate(timeIntervalSinceNow: 0)
         localNotification.category = "INVITE_CATEGORY";
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     func updateCurrentLocation() {

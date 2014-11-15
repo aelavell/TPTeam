@@ -41,7 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             ))
         
         NotificationManager.sharedInstance.initGPS()
-        println("After the apparent call")
         
         return true
     }
