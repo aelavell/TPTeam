@@ -33,8 +33,8 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
             userInfo: nil,
             repeats: true)
         
-        //SessionManager.sharedInstance.events.listenTo("ButtonStateChanged",
-          //                                            {([Any]) -> Void in self.startOrStopNotifications()})
+        SessionManager.sharedInstance.events.listenTo("ButtonStateChanged",
+                                                      {([Any]) -> Void in self.startOrStopNotifications()})
     }
     
     func GetServerButtonState() {
@@ -43,15 +43,16 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     
     func startOrStopNotifications() {
         if (SessionManager.sharedInstance.buttonState) {
-            gotTheTP()
+            needsTheTP()
         }
         else {
-            needsTheTP()
+            gotTheTP()
         }
     }
     
     func gotTheTP(){
         notificationTimer = NSTimer()
+        notifyUserAboutTPAcquisition()
     }
     
     func needsTheTP(){
@@ -87,7 +88,7 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func initTimer(){
-        //updateTPStatus()
+        updateTPStatus()
 
         notificationTimer = NSTimer.scheduledTimerWithTimeInterval(locationUpdateRate,
                                                                    target: self,
