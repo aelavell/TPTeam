@@ -21,6 +21,7 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     var notified = false;
 
     let locationUpdateRate = 60.0    // Update frequency in seconds
+    let serverPollRate = 5.0        // Update frequency in seconds
     let tpNotificationRange = 500.0 // Range in meters
     let timeToWaitAfterNotification = 60 * 60 * 4 // Time in seconds = 4 hours
     
@@ -68,9 +69,20 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
                                                                    selector: Selector("updateTPStatus"),
                                                                    userInfo: nil,
                                                                    repeats: true)
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0,
+                                                           target: self,
+                                                           selector: Selector("pollTheServer"),
+                                                           userInfo: nil,
+                                                           repeats: true)
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(serverPollRate,
+                                                       target: self,
+                                                       selector: Selector("pollTheServer"),
+                                                       userInfo: nil,
+                                                       repeats: true)
     }
 
-    
     func getClosestTP(currentLocation: CLLocation) -> (Double, String) {
         var distances : [Double] = []
         for key in gpsLocations.keys{
@@ -170,6 +182,10 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
             notified = false
             println("reset notifications");
         }
+    }
+    
+    func pollTheServer(){
+        println("pollin pollin pollin")
     }
     
     func initializeNotificationTypes(application: UIApplication){
