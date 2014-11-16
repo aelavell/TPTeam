@@ -33,8 +33,8 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
             userInfo: nil,
             repeats: true)
         
-        SessionManager.sharedInstance.events.listenTo("ButtonStateChanged",
-                                                      {([Any]) -> Void in self.startOrStopNotifications()})
+        //SessionManager.sharedInstance.events.listenTo("ButtonStateChanged",
+          //                                            {([Any]) -> Void in self.startOrStopNotifications()})
     }
     
     func GetServerButtonState() {

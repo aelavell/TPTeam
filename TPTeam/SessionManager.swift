@@ -20,13 +20,14 @@ class SessionManager  {
         
     }
     
-    func SetToggleStatus(state: Bool){
-        SetServerButtonState(state)
+    func SetToggleStatus(state: Bool, sendToServer: Bool){
+        if (sendToServer) { SetServerButtonState(state) }
         SetToggleStatusInternal(state)
     }
     
     func SetToggleStatusInternal(state: Bool) {
         if (buttonState != state){
+            self.events.trigger("ButtonStateChanged", information: [0])
             buttonState = state
             NotificationManager.sharedInstance.startOrStopNotifications()
             
@@ -66,7 +67,7 @@ class SessionManager  {
     func GetServerButtonState() {
         Alamofire.request(.GET, "http://TPTServer.herokuapp.com/api/v1/getButtonState.json")
             .responseJSON {(request, response, JSON, error) in
-                self.events.trigger("ButtonStateChanged", information: [0])
+                
                 var info = JSON as NSDictionary
                 var buttonValue = info["buttonState"] as String
                 
