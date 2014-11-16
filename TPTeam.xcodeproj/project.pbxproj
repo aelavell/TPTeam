@@ -26,6 +26,7 @@
 		9DD0C2AC1A17F3EC00A8F061 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C2911A17F3EC00A8F061 /* README.txt */; };
 		9DD0C2AD1A17F3EC00A8F061 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C2971A17F3EC00A8F061 /* LICENSE */; };
 		9DD0C2AE1A17F3EC00A8F061 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9DD0C2981A17F3EC00A8F061 /* README.txt */; };
+		9DD65F1F1A182A6D00E41CB8 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD65F1E1A182A6D00E41CB8 /* Events.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		9DD0C2911A17F3EC00A8F061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		9DD0C2971A17F3EC00A8F061 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9DD0C2981A17F3EC00A8F061 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		9DD65F1E1A182A6D00E41CB8 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		9D5761691A16F93A0030A307 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				9DD65F1E1A182A6D00E41CB8 /* Events.swift */,
 				9DD0C28C1A17F3EC00A8F061 /* FacebookSDK */,
 				9DD0C27B1A17EA3A00A8F061 /* Alamofire.xcodeproj */,
 			);
@@ -553,6 +556,7 @@
 				9D5763441A17068C0030A307 /* SessionManager.swift in Sources */,
 				9D575FAE1A16DE600030A307 /* NameTeamViewController.swift in Sources */,
 				9D5763421A16FE260030A307 /* LoginViewController.swift in Sources */,
+				9DD65F1F1A182A6D00E41CB8 /* Events.swift in Sources */,
 				9DD0C27A1A17B76200A8F061 /* NotificationManager.swift in Sources */,
 				9D575F8B1A16C3490030A307 /* AppDelegate.swift in Sources */,
 			);

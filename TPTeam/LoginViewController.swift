@@ -1,7 +1,10 @@
 import UIKit
+import Alamofire
+import Foundation
 
 class LoginViewController: UIViewController, FBLoginViewDelegate {
     @IBOutlet var fbLoginView : FBLoginView!
+    var loggingIn : Bool = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +24,25 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
         println("User Email: \(userEmail)")
         // println(FBSession.activeSession().accessTokenData.accessToken)
         SessionManager.sharedInstance.fbUser = user
-        loginToTPTServer(user)
+
+        let params:[String:AnyObject] = ["buttonState": true]
+        
+        /*Alamofire.request(.POST, "http://192.168.100.129:5000/api/v1/setButtonState.json", parameters: params)
+            .responseJSON {(request, response, JSON, error) in
+                println(response)
+                println(JSON)
+                self.loggingIn = false;
+        }
+        
+        Alamofire.request(.GET, "http://192.168.100.129:5000/api/v1/getButtonState.json")
+            .responseJSON {(request, response, JSON, error) in
+                println(response)
+                println(JSON)
+                self.loggingIn = false;
+        }*/
+        
+        self.performSegueWithIdentifier("LOGIN_TO_BUILD_TEAM_SEGUE", sender: self)
+
     }
 
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
@@ -30,9 +51,5 @@ class LoginViewController: UIViewController, FBLoginViewDelegate {
 
     func loginView(loginView : FBLoginView!, handleError:NSError) {
         println("Error: \(handleError.localizedDescription)")
-    }
-    
-    func loginToTPTServer(user: FBGraphUser) {
-        self.performSegueWithIdentifier("LOGIN_TO_BUILD_TEAM_SEGUE", sender: self)
     }
 }

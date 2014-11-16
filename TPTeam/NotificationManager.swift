@@ -1,6 +1,7 @@
 import CoreLocation
 import UIKit
 import AudioToolbox.AudioServices
+import Alamofire
 
 class NotificationManager: NSObject, CLLocationManagerDelegate {
 
@@ -17,7 +18,6 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     var notificationTimer: NSTimer?
     var dateTime = NSDate()
     var calendar = NSCalendar()
-    var needsTP = false;
     var notified = false;
 
     let locationUpdateRate = 60.0    // Update frequency in seconds
@@ -27,6 +27,37 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     
     override init() {
         super.init()
+        NSTimer.scheduledTimerWithTimeInterval(5.0,
+            target: self,
+            selector: "GetServerButtonState",
+            userInfo: nil,
+            repeats: true)
+        
+        SessionManager.sharedInstance.events.listenTo("ButtonStateChanged",
+                                                      {([Any]) -> Void in self.startOrStopNotifications()})
+    }
+    
+    func GetServerButtonState() {
+        SessionManager.sharedInstance.GetServerButtonState();
+    }
+    
+    func startOrStopNotifications() {
+        println(SessionManager.sharedInstance)
+        if (SessionManager.sharedInstance.buttonState) {
+            //gotTheTP()
+        }
+        else {
+            //needsTheTP()
+        }
+    }
+    
+    func gotTheTP(){
+        notificationTimer = NSTimer()
+    }
+    
+    func needsTheTP(){
+        notified = false
+        initTimer()
     }
     
     func initGPSLocations(){
@@ -53,34 +84,17 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         self.locationManager?.pausesLocationUpdatesAutomatically = false
         self.locationManager?.startUpdatingLocation()
         
-        needsTP = true
         initTimer()
     }
     
     func initTimer(){
-        notificationTimer = NSTimer.scheduledTimerWithTimeInterval(0,
-                                                                   target: self,
-                                                                   selector: Selector("updateTPStatus"),
-                                                                   userInfo: nil,
-                                                                   repeats: false)
+        updateTPStatus()
 
         notificationTimer = NSTimer.scheduledTimerWithTimeInterval(locationUpdateRate,
                                                                    target: self,
                                                                    selector: Selector("updateTPStatus"),
-                                                                   userInfo: nil,
-                                                                   repeats: true)
-        
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0,
-                                                           target: self,
-                                                           selector: Selector("pollTheServer"),
                                                            userInfo: nil,
                                                            repeats: true)
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(serverPollRate,
-                                                       target: self,
-                                                       selector: Selector("pollTheServer"),
-                                                       userInfo: nil,
-                                                       repeats: true)
     }
 
     func getClosestTP(currentLocation: CLLocation) -> (Double, String) {
@@ -102,16 +116,7 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         return (distances[0], locationName)
     }
     
-    func gotTheTP(){
-        notificationTimer = NSTimer()
-        needsTP = false
-    }
     
-    func needsTheTP(){
-        needsTP = true
-        notified = false
-        initTimer()
-    }
     
     func notifyUserAboutNearestTP(storeName : String) {
 
@@ -194,9 +199,6 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
             notified = false
             println("reset notifications");
         }
-    }
-    
-    func pollTheServer(){
     }
     
     func initializeNotificationTypes(application: UIApplication){
