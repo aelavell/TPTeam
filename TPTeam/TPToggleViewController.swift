@@ -11,7 +11,12 @@ class TPToggleViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        //SessionManager.sharedInstance.events.listenTo("ButtonStateChanged", {([Any]) -> Void in self.updateButton()})
+        SessionManager.sharedInstance.events.listenTo("ButtonStateChanged", {([Any]) -> Void in self.updateButtonAppearance()})
+    }
+
+    func updateButtonAppearance() {
+        var sm = SessionManager.sharedInstance
+        toggle?.selected = sm.buttonState
     }
     
     func updateButton() {
@@ -21,11 +26,11 @@ class TPToggleViewController: UIViewController {
     func evaluateButtonState(sendToServer: Bool){
         var sm = SessionManager.sharedInstance
         if (sm.buttonState == true) {
-            sm.SetToggleStatus(false, sendToServer: sendToServer)
+            sm.SetToggleStatus(true, sendToServer: sendToServer)
             toggle?.selected = false;
         }
         else {
-            sm.SetToggleStatus(true, sendToServer: sendToServer)
+            sm.SetToggleStatus(false, sendToServer: sendToServer)
             toggle?.selected = true;
         }
     }

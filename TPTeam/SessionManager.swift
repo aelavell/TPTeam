@@ -12,6 +12,8 @@ class SessionManager  {
     var friends : [AnyObject] = []
     var team : [AnyObject] = []
     var buttonState : Bool = false;
+    var firstTime : Bool = true;
+    
     
     let events = EventManager()
 
@@ -22,13 +24,14 @@ class SessionManager  {
     
     func SetToggleStatus(state: Bool, sendToServer: Bool){
         if (sendToServer) { SetServerButtonState(state) }
-        SetToggleStatusInternal(state)
+        SetToggleStatusInternal(state, remoteStateChange: false)
     }
     
-    func SetToggleStatusInternal(state: Bool) {
-        if (buttonState != state){
-            self.events.trigger("ButtonStateChanged", information: [0])
+    func SetToggleStatusInternal(state: Bool, remoteStateChange: Bool) {
+        if (firstTime || buttonState != state){
+            firstTime = false;
             buttonState = state
+            if (remoteStateChange) { self.events.trigger("ButtonStateChanged", information: [0]) }
             NotificationManager.sharedInstance.startOrStopNotifications()
             
         }
@@ -73,7 +76,7 @@ class SessionManager  {
                 
                 println("Button value is \(buttonValue)")
                 
-                self.SetToggleStatusInternal(buttonValue == "0")
+                self.SetToggleStatusInternal(buttonValue == "0", remoteStateChange: true)
         }
     }
 }
