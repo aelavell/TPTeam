@@ -7,7 +7,12 @@ class BuildTeamViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 190.0/255.0, green: 221.0/255.0, blue: 161.0/255.0, alpha:1.0)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "DONE", style: UIBarButtonItemStyle.Plain, target: self, action: "nextPressed:")
+        
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController?.navigationBar.titleTextAttributes = titleDict
         
         var friendsRequest = FBRequest.requestForMyFriends()
         friendsRequest.startWithCompletionHandler(

@@ -23,6 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // Setup for background local notifications
         NotificationManager.sharedInstance.initializeNotificationTypes(application)
         NotificationManager.sharedInstance.initGPS()
+        
+        //UINavigationBar.appearance().backgroundColor = UIColor(red: 190/255.0, green: 221/255.0, blue: 161/255.0, alpha: 1);
+        //UINavigationBar.appearance().backgroundColor = UIColor.blueColor()
+
+        UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
 
         return true
     }
