@@ -20,7 +20,7 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     var calendar = NSCalendar()
     var notified = false;
 
-    let locationUpdateRate = 60.0    // Update frequency in seconds
+    let locationUpdateRate = 20.0    // Update frequency in seconds
     let serverPollRate = 5.0        // Update frequency in seconds
     let tpNotificationRange = 500.0 // Range in meters
     let timeToWaitAfterNotification = 60 * 60 * 4 // Time in seconds = 4 hours
@@ -88,11 +88,11 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func initTimer(){
-        notificationTimer = NSTimer.scheduledTimerWithTimeInterval(5,
+        /*notificationTimer = NSTimer.scheduledTimerWithTimeInterval(5,
             target: self,
             selector: Selector("updateTPStatus"),
             userInfo: nil,
-            repeats: false)
+            repeats: false)*/
 
         notificationTimer = NSTimer.scheduledTimerWithTimeInterval(locationUpdateRate,
                                                                    target: self,
