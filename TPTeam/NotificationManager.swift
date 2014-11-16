@@ -52,7 +52,7 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     
     func gotTheTP(){
         notificationTimer = NSTimer()
-        notifyUserAboutTPAcquisition()
+        //notifyUserAboutTPAcquisition()
     }
     
     func needsTheTP(){
@@ -88,7 +88,11 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func initTimer(){
-        updateTPStatus()
+        notificationTimer = NSTimer.scheduledTimerWithTimeInterval(5,
+            target: self,
+            selector: Selector("updateTPStatus"),
+            userInfo: nil,
+            repeats: false)
 
         notificationTimer = NSTimer.scheduledTimerWithTimeInterval(locationUpdateRate,
                                                                    target: self,
