@@ -42,12 +42,11 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func startOrStopNotifications() {
-        println(SessionManager.sharedInstance)
         if (SessionManager.sharedInstance.buttonState) {
-            //gotTheTP()
+            gotTheTP()
         }
         else {
-            //needsTheTP()
+            needsTheTP()
         }
     }
     
@@ -93,8 +92,8 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         notificationTimer = NSTimer.scheduledTimerWithTimeInterval(locationUpdateRate,
                                                                    target: self,
                                                                    selector: Selector("updateTPStatus"),
-                                                           userInfo: nil,
-                                                           repeats: true)
+                                                                   userInfo: nil,
+                                                                   repeats: true)
     }
 
     func getClosestTP(currentLocation: CLLocation) -> (Double, String) {
@@ -216,7 +215,6 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         notificationBackgroundActionCancel.authenticationRequired = false
         notificationBackgroundActionCancel.activationMode = UIUserNotificationActivationMode.Background
 
-        
         var backgroundNotification:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
         backgroundNotification.identifier = "BACKGROUND_NOTIFICATION"
         backgroundNotification.setActions([notificationBackgroundActionOk,

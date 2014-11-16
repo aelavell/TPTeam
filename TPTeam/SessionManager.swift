@@ -2,6 +2,7 @@ import Alamofire
 
 private let _SessionManagerSharedInstance = SessionManager()
 
+
 class SessionManager  {
     class var sharedInstance : SessionManager {
         return _SessionManagerSharedInstance
@@ -19,18 +20,18 @@ class SessionManager  {
         
     }
     
-    func SetToggleStatus(state: Bool) {
-        buttonState = state;
-        if buttonState {
-            NotificationManager.sharedInstance.gotTheTP()
-        }
-        else {
-            NotificationManager.sharedInstance.needsTheTP()
-        }
-        SetServerButtonState(state);
+    func SetToggleStatus(state: Bool){
+        SetServerButtonState(state)
+        SetToggleStatusInternal(state)
     }
     
-    
+    func SetToggleStatusInternal(state: Bool) {
+        if (buttonState != state){
+            buttonState = state
+            NotificationManager.sharedInstance.startOrStopNotifications()
+            
+        }
+    }
     
     init() {
         // Get toggle status from the server and act accordingly
@@ -58,8 +59,7 @@ class SessionManager  {
         let params:[String:AnyObject] = ["buttonState": state]
         Alamofire.request(.POST, "http://TPTServer.herokuapp.com/api/v1/setButtonState.json", parameters: params)
             .responseJSON {(request, response, JSON, error) in
-                println(response)
-                println(JSON)
+                println("Sending params \(params)")
         }
     }
     
@@ -67,7 +67,12 @@ class SessionManager  {
         Alamofire.request(.GET, "http://TPTServer.herokuapp.com/api/v1/getButtonState.json")
             .responseJSON {(request, response, JSON, error) in
                 self.events.trigger("ButtonStateChanged", information: [0])
-                println(JSON)
+                var info = JSON as NSDictionary
+                var buttonValue = info["buttonState"] as String
+                
+                println("Button value is \(buttonValue)")
+                
+                self.SetToggleStatusInternal(buttonValue == "0")
         }
     }
 }
