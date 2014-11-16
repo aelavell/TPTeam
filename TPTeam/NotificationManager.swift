@@ -116,11 +116,26 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     func notifyUserAboutNearestTP(storeName : String) {
 
         var notificationMessage = "You can get TP at \(storeName)"
+        notifyUser(notificationMessage, notificationTitle: "TP Proximity Alert")
+        
+        notified = true
+        dateTime = NSDate()
+    }
+    
+    func notifyUserAboutNeedForTP(){
+        notifyUser("You're out of TP!", notificationTitle: "TP Status Change")
+    }
+    
+    func notifyUserAboutTPAcquisition(){
+        notifyUser("Someone else got TP!", notificationTitle:  "TP Status Change")
+    }
+    
+    func notifyUser(notificationMessage: String, notificationTitle: String){
         
         if (uiApplication?.applicationState == UIApplicationState.Active){
             var alertController = UIAlertController(title: "TP Proximity Alert",
-                                                    message: notificationMessage,
-                                                    preferredStyle: .Alert)
+                message: notificationMessage,
+                preferredStyle: .Alert)
             
             let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
                 // OK CODEEEE
@@ -129,8 +144,8 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
             alertController.addAction(OKAction)
             
             getTopmostViewController().presentViewController(alertController,
-                                                             animated: true,
-                                                             {() -> Void in return})
+                animated: true,
+                {() -> Void in return})
         }
         else{
             var localNotification = UILocalNotification()
@@ -142,9 +157,6 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
         }
         
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-        
-        notified = true
-        dateTime = NSDate()
     }
     
     func getTopmostViewController() -> UIViewController{
@@ -185,7 +197,6 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func pollTheServer(){
-        println("pollin pollin pollin")
     }
     
     func initializeNotificationTypes(application: UIApplication){
