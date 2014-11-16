@@ -17,41 +17,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TP TEAM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyZ-Zk-h50">
-                                <rect key="frame" x="152" y="223" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEVER FORGET" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwO-Qh-h4y">
-                                <rect key="frame" x="124" y="423" width="128" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TP" translatesAutoresizingMaskIntoConstraints="NO" id="HvB-oF-sId">
+                                <rect key="frame" x="-23" y="124" width="421" height="420"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUi-43-nFJ" customClass="FBLoginView">
-                                <rect key="frame" x="78" y="309" width="220" height="50"/>
+                                <rect key="frame" x="88" y="562" width="200" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="F9P-1k-Wcb"/>
+                                    <constraint firstAttribute="width" constant="200" id="F9P-1k-Wcb"/>
                                     <constraint firstAttribute="height" constant="50" id="wS6-vi-a6c"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.74509803919999995" green="0.86666666670000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="FwO-Qh-h4y" secondAttribute="centerX" id="LEw-kM-CbL"/>
-                            <constraint firstAttribute="centerY" secondItem="dyZ-Zk-h50" secondAttribute="centerY" constant="-100" id="PFt-83-kY2"/>
-                            <constraint firstAttribute="centerY" secondItem="dyZ-Zk-h50" secondAttribute="centerY" constant="100" id="XSJ-0p-QYZ"/>
+                            <constraint firstAttribute="trailing" secondItem="HvB-oF-sId" secondAttribute="trailing" id="2rC-Us-LeQ"/>
+                            <constraint firstAttribute="centerY" secondItem="HvB-oF-sId" secondAttribute="centerY" id="EhN-1m-Yjw"/>
+                            <constraint firstItem="HvB-oF-sId" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="OaO-Ad-01V"/>
+                            <constraint firstAttribute="centerX" secondItem="GUi-43-nFJ" secondAttribute="centerX" id="QwR-ft-KO7"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HvB-oF-sId" secondAttribute="bottom" id="Sac-IU-WND"/>
                             <constraint firstAttribute="centerY" secondItem="GUi-43-nFJ" secondAttribute="centerY" id="Y2X-BV-VqF"/>
-                            <constraint firstAttribute="centerX" secondItem="dyZ-Zk-h50" secondAttribute="centerX" id="Zpp-Hh-7gc"/>
-                            <constraint firstAttribute="centerY" secondItem="FwO-Qh-h4y" secondAttribute="centerY" constant="-100" id="eLz-UB-YoG"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="GUi-43-nFJ" secondAttribute="bottom" constant="55" id="cXx-zp-0Ev"/>
                             <constraint firstAttribute="centerY" secondItem="GUi-43-nFJ" secondAttribute="centerY" id="lge-Th-Cnj"/>
+                            <constraint firstItem="HvB-oF-sId" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="ucv-7P-H5v"/>
                             <constraint firstAttribute="centerX" secondItem="GUi-43-nFJ" secondAttribute="centerX" id="ukY-of-vxN"/>
+                            <constraint firstAttribute="centerX" secondItem="HvB-oF-sId" secondAttribute="centerX" id="x3k-Zo-FSY"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="PFt-83-kY2"/>
+                                <exclude reference="2rC-Us-LeQ"/>
+                                <exclude reference="OaO-Ad-01V"/>
+                                <exclude reference="ucv-7P-H5v"/>
+                                <exclude reference="Y2X-BV-VqF"/>
+                                <exclude reference="lge-Th-Cnj"/>
+                                <exclude reference="ukY-of-vxN"/>
+                                <exclude reference="Sac-IU-WND"/>
                             </mask>
                         </variation>
                     </view>

@@ -88,7 +88,7 @@ class NotificationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func initTimer(){
-        updateTPStatus()
+        //updateTPStatus()
 
         notificationTimer = NSTimer.scheduledTimerWithTimeInterval(locationUpdateRate,
                                                                    target: self,
